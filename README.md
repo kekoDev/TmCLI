@@ -1,4 +1,4 @@
-# install 
+# install تثبيت
 
 1. `git clone https://github.com/kekoDev/TmCLI`
 
@@ -8,7 +8,7 @@
 
 
 
-# install php 7.4 for Ubuntu
+# install php 7.4 for Ubuntu تثبيت بي اتش بي 7.4 ل اوبونتو
 `sudo add-apt-repository ppa:jczaplicki/xenial-php74-temp`
 
 `sudo apt update`
