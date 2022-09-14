@@ -9,8 +9,8 @@
 
 
 # install php 7.4 for Ubuntu
-sudo add-apt-repository ppa:jczaplicki/xenial-php74-temp
+`sudo add-apt-repository ppa:jczaplicki/xenial-php74-temp`
 
-sudo apt update 
+`sudo apt update`
 
-sudo apt install -y php7.4 php7.4-curl php7.4-xml
+`sudo apt install -y php7.4 php7.4-curl php7.4-xml`
