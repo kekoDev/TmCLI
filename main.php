@@ -87,7 +87,7 @@ if (!$me['bot']) {
         }
         echo "joining : {$result->title} | Member Count : {$result->MemberCount} | coin : {$result->coin}\n";
         try {
-            $MadelineProto->channels->joinChannel(channel:$result->url);
+            $MadelineProto->channels->joinChannel(['channel' => $result->url]);
         } catch (\danog\MadelineProto\RPCErrorException$e) {
             $MadelineProto->logger($e);
         }
