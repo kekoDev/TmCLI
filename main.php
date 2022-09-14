@@ -2,11 +2,20 @@
 if (!file_exists('madeline.php')) {
     copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
 }
+function keko_readline($text){
+    if (PHP_OS == 'WINNT') {
+        echo $text;
+        $line = stream_get_line(STDIN, 1024, PHP_EOL);
+     } else {
+         $line = readline($text);
+     }
+}
+
 include 'madeline.php';
 $settings = [];
 $settings['logger']['logger_level'] = 0;
 $settings['app_info']['api_id'] = 579315;
-$settings['app_info']['api_hash'] = '4ace69ed2f78cec268dc7483fd3d3424';
+$settings['app_info']['api_hash'] = '4ace69ed2f78cec268dc7az483fd3d3424';
 if (!file_exists("accounts")){
     mkdir("accounts");
 }
@@ -21,11 +30,12 @@ foreach ($files as $file) {
   echo "- ".str_replace(".madeline","",str_replace("accounts/","",$file));
   echo "\n";
 }
-$phone = readline("\nEnter your phone number: ");
+$phone = keko_readline("\nEnter your phone number: ");
+
 if (empty($phone)){
     exit(0);
 }
-$key = readline("\nEnter your key : ");
+$key = keko_readline("\nEnter your key : ");
 if (empty($key)){
     exit(0);
 }
@@ -36,7 +46,7 @@ if (!empty($data) and json_decode($data)->ok == true) {
     echo "- key dont work;";
     exit(0);
 }
-$sleep = readline("\nEnter sleep time in minutes (10) : ");
+$sleep = keko_readline("\nEnter sleep time in minutes (10) : ");
 if (empty($sleep) or is_numeric($sleep) == false){
     $sleep = 10;
 }
